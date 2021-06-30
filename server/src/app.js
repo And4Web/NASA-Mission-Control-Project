@@ -1,7 +1,3 @@
-//In this app.js file, we are separating the "server functionality" of code from Express code from server.js, to make our code more organised.
-
-//In this file we'll have all our Express codes.
-
 
 const express = require('express');
 const cors = require('cors');

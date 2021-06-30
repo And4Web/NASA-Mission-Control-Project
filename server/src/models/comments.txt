@@ -1,0 +1,18 @@
+//Here our planet data is loaded and parsed with streams. All of this happens asynchronously. We tell Node to process it but we don't wait around it. our module exports the planets before they are loaded. so here we'll see error.
+ //We'll call all the above code before handling any request.
+ /*
+ function loadPlanetsData(){
+   ---All the stream code---
+ }
+ */
+ //We can create a JS promise for our data to load and we can wait for that promise to resolve before any incoming request in our controller.
+ 
+/*
+ const promise = new promise();
+ promise.then((resolve, reject) => {
+   resolve(42);
+ });
+ const result = await promise;
+ -> alternative of above .then
+ console.log(result);
+ */

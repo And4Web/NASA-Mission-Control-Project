@@ -1,0 +1,2 @@
+//This file has server functionality of code. Express codes are in the app.js file.
+
