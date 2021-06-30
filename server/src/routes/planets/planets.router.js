@@ -1,10 +1,8 @@
 const express = require('express');
 
-
 /*
 
 const planetsController = require('./planets.controller');
-
 
 we can write the above constant using destructuring too: 
 */
