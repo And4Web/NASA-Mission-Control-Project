@@ -4,7 +4,7 @@ const planetsController = require('./planets.controller');
 /*we can write the above constant using destructuring too: 
 
 const {
-  getAllPlanets
+  getAllPlanets,
 } = require('./planets.controller');
 
 This is a better way because we can use multiple functions from the same module.*/
