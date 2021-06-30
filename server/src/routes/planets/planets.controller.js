@@ -10,4 +10,4 @@ function getAllPlanets(req, res){
 
 module.exports = {
   getAllPlanets,
-}
+};
