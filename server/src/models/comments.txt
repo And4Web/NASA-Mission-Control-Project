@@ -8,7 +8,7 @@
  //We can create a JS promise for our data to load and we can wait for that promise to resolve before any incoming request in our controller.
  
 /*
- const promise = new promise();
+ const promise = new Promise();
  promise.then((resolve, reject) => {
    resolve(42);
  });

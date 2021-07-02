@@ -9,7 +9,7 @@ function isHabitable(planet){
 }
 
 function loadPlanetsData(){
-  return new promise((resolve, reject) => {
+  return new Promise((resolve, reject) => {
     fs.createReadStream(path.join(__dirname, '..', '..', 'data', 'kepler_data.csv'))
     .pipe(parse({
       comment: '#',
@@ -25,7 +25,8 @@ function loadPlanetsData(){
       reject(err);
       })
       .on('end', () => {
-        console.log(`${habitablePlanets.length} Planets with required properties.`);
+        console.log(`${habitablePlanets.length} Planets are found with required properties.`);
+        
         resolve();
     });
   }) 
