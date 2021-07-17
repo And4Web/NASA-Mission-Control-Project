@@ -1,6 +1,6 @@
 const path = require('path');
 const express = require('express');
-const morgan = require('morgan');
+const morgan = require('morgan');//Morgan module for logging in all the request made.
 const cors = require('cors');
 const planetsRouter = require('./routes/planets/planets.router');
 const launchesRouter = require('./routes/launches/launches.router');
@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 
 app.use(planetsRouter);
 app.use(launchesRouter);
-app.get('/', (req, res) => {
+app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
 });
 

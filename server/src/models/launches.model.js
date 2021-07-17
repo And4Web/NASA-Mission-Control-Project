@@ -16,6 +16,10 @@ launches.set(launch.flightNumber, launch);
 
 //launches.get(100);
 
+function getAllLaunches(){
+  return Array.from(launches.values());
+}
+
 module.exports = {
-  launches,
+  getAllLaunches,
 };
