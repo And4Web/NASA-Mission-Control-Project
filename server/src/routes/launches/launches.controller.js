@@ -28,7 +28,20 @@ function httpAddNewLaunch(req, res){
   return res.status(201).json(launch);
 }
 
+function httpAbortLaunch(req, res){
+
+
+  //if Launch does not exist:
+  return res.status(404).json({
+    error: 'Launch not found.',
+  });
+
+  //if Launch exists:
+  return res.status(200).json(aborted);
+}
+
 module.exports = {
   httpGetAllLaunches,
   httpAddNewLaunch,
+  httpAbortLaunch,
 };
