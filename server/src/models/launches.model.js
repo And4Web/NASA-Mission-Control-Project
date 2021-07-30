@@ -37,8 +37,13 @@ function addNewLaunch(launch){
   );
 }
 
-function abortLaunchById(){
-  
+function abortLaunchById(launchId){
+  //launches.delete(launchId);
+  //Common way with internet Application in the era of Big Data, We won't remove Launch data completely, instead we will mark the data as aborted:
+  const aborted = launches.get(launchId);
+  aborted.upcoming = false;
+  aborted.success = false;
+  return aborted;
 }
 
 module.exports = {

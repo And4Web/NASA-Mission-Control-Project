@@ -39,9 +39,7 @@ function httpAbortLaunch(req, res){
   }
   
   //if Launch exists:
-  if(abortLaunchById){
-
-  }
+  const aborted = abortLaunchById(launchId);
   return res.status(200).json(aborted);
 }
 
