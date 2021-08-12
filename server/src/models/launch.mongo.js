@@ -19,7 +19,7 @@ const launchesSchema = new mongoose.Schema({
 
   },
   target: {
-    /*type: mongoose.isValidObjectId,
+    /*type: mongoose.ObjectId,
     ref: 'Planet'*/
     type: String,
     required: true,
@@ -36,3 +36,5 @@ const launchesSchema = new mongoose.Schema({
   customer: [String],
 
 });
+
+module.exports = mongoose.model('Launch', launchesSchema);
