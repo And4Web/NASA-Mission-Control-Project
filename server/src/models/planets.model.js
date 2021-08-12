@@ -38,8 +38,12 @@ function loadPlanetsData(){
   
 }
 
-function getAllPlanets(){
+/*function getAllPlanets(){
   return habitablePlanets;
+}*/
+
+async function getAllPlanets(){
+  return await planets.find({});
 }
 
 module.exports = {
