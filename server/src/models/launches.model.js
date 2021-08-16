@@ -1,5 +1,5 @@
 const launchesDatabase = require('./launch.mongo');
-
+const planets = require('./planets.mongo');
 const launches = new Map();
 
 let latestFlightNumber = 100;
@@ -10,9 +10,9 @@ const launch = {
   rocket: 'GSLV-2021',
   launchDate: new Date('July 28, 2021'),
   target: 'Kepler-442 b',
-  //customers: ['ISRO', 'IIT-D', 'IIT-B', 'TIFR', 'IISC-Banglore'],
-  //upcoming: true,
-  //success: true,
+  customers: ['ISRO', 'IIT-D', 'IIT-B', 'TIFR', 'IISC-Banglore'],
+  upcoming: true,
+  success: true,
 
 };
 
@@ -37,6 +37,12 @@ async function getAllLaunches(){
 }
 
 async function saveLaunch(launch){
+  const planet = await planets.findOne({
+    keplerName: launch.target,
+  });
+  if(!planet){
+    throw new Error('No matching planet found.');
+  }
   await launchesDatabase.updateOne({flightNumber: launch.flightNumber,
   }, launch, {
     upsert: true,
