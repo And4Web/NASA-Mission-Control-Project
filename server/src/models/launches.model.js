@@ -70,7 +70,17 @@ async function saveLaunch(launch){
   );
 }*/
 
-
+async function scheduleNewLaunch(){
+  const newFlightNumber = await getLatestFlightNumber() + 1;
+  
+  const newLaunch = Object.assign(launch, {
+    success: true,
+    upcoming: true,
+    customers: ['ISRO', 'IIT-D', 'IIT-B', 'TIFR', 'IISC-Banglore'],
+    flightNumber: newFlightNumber,
+  });
+  await saveLaunch(newLaunch);
+}
 
 function abortLaunchById(launchId){
   //launches.delete(launchId);
@@ -83,7 +93,8 @@ function abortLaunchById(launchId){
 
 module.exports = {
   getAllLaunches,
-  addNewLaunch,
+  //addNewLaunch,
+  scheduleNewLaunch,
   existsLaunchById,
   abortLaunchById,
 };
