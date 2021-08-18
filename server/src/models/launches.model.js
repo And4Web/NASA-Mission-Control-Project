@@ -59,7 +59,7 @@ async function saveLaunch(launch){
   });
 }
 
-function addNewLaunch(launch){
+/*function addNewLaunch(launch){
   latestFlightNumber++;
   launches.set(latestFlightNumber, Object.assign(launch, {
     flightNumber: latestFlightNumber,
@@ -68,7 +68,9 @@ function addNewLaunch(launch){
     success: true,
   })
   );
-}
+}*/
+
+
 
 function abortLaunchById(launchId){
   //launches.delete(launchId);
