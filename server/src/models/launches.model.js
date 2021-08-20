@@ -24,8 +24,14 @@ saveLaunch(launch);
 
 //launches.get(100);
 
-function existsLaunchById(launchId){
+/*function existsLaunchById(launchId){
   return launches.has(launchId);
+}*/
+
+async function existsLaunchById(launchId){
+  return await launchesDatabase.findOne({
+    flightNumber: launchId,
+  });
 }
 
 async function getLatestFlightNumber(){
@@ -83,13 +89,22 @@ async function scheduleNewLaunch(){
   await saveLaunch(newLaunch);
 }
 
-function abortLaunchById(launchId){
+/*function abortLaunchById(launchId){
   //launches.delete(launchId);
   //Common way with internet Application in the era of Big Data, We won't remove Launch data completely, instead we will mark the data as aborted:
   const aborted = launches.get(launchId);
   aborted.upcoming = false;
   aborted.success = false;
   return aborted;
+}*/
+
+async function abortLaunchById(launchId){
+  return await launchesDatabase.updateOne({
+    flightNumber: launchId,
+  }, {
+    upcoming: false,
+    success: false,
+  });
 }
 
 module.exports = {
